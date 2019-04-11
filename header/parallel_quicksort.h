@@ -3,7 +3,7 @@
 
 #include "omp.h"
 #include "insertion_sort.h"
-#include "quicksort.h"
+#include "quicksort.h"    // partition()
 #include "type.h"
 
 #define LEN_LIMIT 1024
