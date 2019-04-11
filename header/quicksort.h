@@ -18,10 +18,7 @@ index_t partition(list_t lst, index_t begin, index_t end, value_t pivot)
 
 void quicksort(list_t lst, index_t begin, index_t end)
 {
-    if(end - begin <= ISORT_MAX) {
-        insertion_sort(lst, begin, end);
-        return;
-    }
+    if(end - begin <= 1) return;
     index_t part_point = partition(lst, begin, end, lst[(begin + end)/2]);
     quicksort(lst, begin, part_point);
     quicksort(lst, part_point+1, end);
