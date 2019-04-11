@@ -2,7 +2,6 @@
 #define QUICKSORT_H_
 
 #include "type.h"
-#include "insertion_sort.h"
 
 index_t partition(list_t lst, index_t begin, index_t end, value_t pivot)
 {
