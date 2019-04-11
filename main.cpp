@@ -1,4 +1,4 @@
-#include "header/essential_header.h"  // if you see wraning messages for this header, just ignore.
+#include "header/essential_header.h"  // if you see warning messages for this header, just ignore.
 #include <algorithm>    // std::transform()
 
 value_t lst[LIST_SIZE];
