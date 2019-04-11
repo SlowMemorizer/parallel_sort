@@ -42,7 +42,7 @@ void parallel_mergesort(list_t lst, index_t begin, index_t end, list_t temp)
         for(j=0, b=0, e=0, m=0; j < i; ++j) {
            m = b + (unit * div_num) - 1;
            e = m + (unit * div_num);
-           if(i == 1) e = end;  
+           if(j == i-1) e = end;  
            thrs[j] = thread(merge, lst, b, m, e, temp);
            b = e + 1;
         }
