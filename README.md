@@ -3,5 +3,5 @@
 How to use?
 -----------
 
-* just execture 'build.sh'  
+* just execute 'build.sh'  
 
