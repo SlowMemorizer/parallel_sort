@@ -7,6 +7,19 @@
 
 using std::thread;
 
+void mergesort_op(list_t lst, index_t begin, index_t end, list_t temp)
+{
+    if(end - begin < ISORT_MAX) 
+        insertion_sort(lst, begin, end);
+    else {
+        index_t mid = (begin + end) / 2;
+    
+        mergesort(lst, begin, mid, temp);
+        mergesort(lst, mid+1, end, temp);
+        merge(lst, begin, mid, end, temp);     
+    }
+}
+
 void parallel_mergesort(list_t lst, index_t begin, index_t end, list_t temp)
 {
     static const int THREAD_MAX = 16;
@@ -19,7 +32,7 @@ void parallel_mergesort(list_t lst, index_t begin, index_t end, list_t temp)
     for(i=0; i < THREAD_MAX; ++i) {
         e = b + div_num - 1;
         if(i == THREAD_MAX-1) e = end;   
-        thrs[i] = thread(mergesort, lst, b, e, temp);
+        thrs[i] = thread(mergesort_op, lst, b, e, temp);
         b = e + 1;
     }
     for(i=0; i < THREAD_MAX; ++i) thrs[i].join();
