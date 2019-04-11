@@ -10,12 +10,9 @@ void bubblesort(list_t lst, index_t begin, index_t end)
     index_t i, j;
     bool swapped = false;
 
-    for(i = 0; i < size-1; ++i) 
-    {
-        for(j = 0; j < size-i-1; ++j) 
-        {
-            if(lst[j] > lst[j+1]) 
-            {
+    for(i = 0; i < size-1; ++i) {
+        for(j = 0; j < size-i-1; ++j) {
+            if(lst[j] > lst[j+1]) {
                 Swap(&lst[j], &lst[i]);
                 swapped = true;
             }
