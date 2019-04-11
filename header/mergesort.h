@@ -32,8 +32,7 @@ void merge(list_t lst, index_t begin, index_t mid, index_t end, list_t temp)
 
 void mergesort(list_t lst, index_t begin, index_t end, list_t temp)
 {
-    if(end - begin < ISORT_MAX) 
-        insertion_sort(lst, begin, end);
+    if(end - begin <= 1) return;
     else {
         index_t mid = (begin + end) / 2;
     
