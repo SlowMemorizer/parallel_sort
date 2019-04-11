@@ -35,7 +35,7 @@ void parallel_quicksort(list_t lst, index_t begin, index_t end)
     {
         #pragma omp master
         run_quicksort(lst, begin, end);
-	    // implicit barrier(wait until all tasks(sorting) are finished.)
+	// implicit barrier(wait until all tasks(sorting) are finished.)
     } 
 }
 
